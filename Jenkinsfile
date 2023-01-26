@@ -24,7 +24,7 @@ pipeline {
         // CD - Continuous Delivery
         stage ('Deploy Kubernetes') {
            steps {
-               withKubeconfig ([credentialsId: 'kubeconfig']) {
+               withKubeConfig ([credentialsId: 'kubeconfig']) {
                    sh 'kubectl apply -f ./k8s/deployment.yaml'
                 }
             }
